@@ -17,16 +17,16 @@ public class Place {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
-	@Column(name = "name")
+	@Column(name = "name", nullable = false)
 	private String name;
 	
-	@Column(name = "city")
+	@Column(name = "city", nullable = false)
 	private String city;
 	
-	@Column(name = "state")
+	@Column(name = "state", nullable = false)
 	private String state;
 	
-	@Column(name = "createdAt")
+	@Column(name = "createdAt", nullable = false)
 	private Date createdAt;
 	
 	@Column(name = "updatedAt")
@@ -91,6 +91,18 @@ public class Place {
 	public void setUpdatedAt(Date date) {
 		this.updatedAt = date;
 	}
+	
+    @Override
+    public String toString() {
+        return "{" +
+            " id='" + getId() + "'" +
+            ", name='" + getName() + "'" +
+            ", city='" + getCity() + "'" +
+            ", State='" + getState() + "'" +
+            ", createAt='" + getCreatedAt() + "'" +
+            ", updateAt='" + getUpdatedAt() + "'" +
+            "}";
+    }
 	
 	
 	

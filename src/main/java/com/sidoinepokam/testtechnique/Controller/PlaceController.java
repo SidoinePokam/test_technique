@@ -48,7 +48,7 @@ public class PlaceController {
 	}
 	
 	
-	//upadte place
+	//update place
 	@PutMapping("/places/{id}")
 	public ResponseEntity<Place> updatePlace(@PathVariable(name = "id") long placeId, @RequestBody Place placeDetails) throws PlaceNotFoundException{
 		Place place = placeRepository.findById(placeId).orElseThrow(() ->new PlaceNotFoundException("Place not found for this id : " + placeId));
